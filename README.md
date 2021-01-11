@@ -16,6 +16,7 @@
 ### Association
 
 - has_many :items
+- has_many :orders
 
 ## items テーブル
 
@@ -49,16 +50,15 @@
 
 ### Association
 
-- has_one :order
 
 ## ordersテーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| item     | references | null: false, foreign_key: true |
-| purchase | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ----   | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 
+- belongs_to :user
 - belongs_to :item
-- belongs_to :purchaser
