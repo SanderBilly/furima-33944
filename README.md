@@ -55,7 +55,6 @@
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| price    | integer    | null: false                    |
 | item     | references | null: false, foreign_key: true |
 | purchase | references | null: false, foreign_key: true |
 
