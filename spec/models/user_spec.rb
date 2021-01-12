@@ -63,6 +63,11 @@ RSpec.describe User, type: :model do
       another_user.valid?
       expect(another_user.errors.full_messages).to include "Email has already been taken"
     end
+    it "emailに@が含まれていなければ新規登録できない" do
+      @user.email = "abcdef"
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Email is invalid"
+    end
     it "passwordが半角英数字混合でなければ新規登録できない" do
       password = "123456"
       @user.password = password
