@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     if Item.exists?
       @items = Item.includes(:user).order("created_at DESC")
