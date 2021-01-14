@@ -1,9 +1,8 @@
 class Item < ApplicationRecord
   with_options presence: true do
-    # validates :image
+    validates :image
     validates :name
     validates :description
-    validates :price
   end
 
   with_options numericality: { other_than: 0, message: "can't be blank" } do
@@ -13,6 +12,10 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :shipping_day_id
   end
+
+  validates :price, presence: true
+  validates :price, numericality: { only_integer: true, message: "is invalid. Input half-width numbers." }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
 
   has_one_attached :image
   
