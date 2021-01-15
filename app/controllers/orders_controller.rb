@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_item, only: [:index, :create, :move_to_index]
   before_action :move_to_index
 
   def index
-    set_item
     @order_purchaser = OrderPurchaser.new
   end
 
@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
       pay_item
       return redirect_to root_path
     else
-      set_item
       render action: :index
     end
   end
@@ -36,7 +35,6 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    set_item
     if current_user.id == @item.user.id
       redirect_to root_path
     end
