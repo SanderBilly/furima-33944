@@ -1,6 +1,6 @@
 class OrderPurchaser
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :token, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :order_id
+  attr_accessor :user_id, :item_id, :token, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number
 
   with_options presence: true do
     validates :token
