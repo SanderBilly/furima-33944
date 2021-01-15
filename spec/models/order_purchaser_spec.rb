@@ -4,9 +4,11 @@ RSpec.describe OrderPurchaser, type: :model do
   describe '商品の購入' do
     before do
       @order_purchaser = FactoryBot.build(:order_purchaser)
+      @user = FactoryBot.build(:user)
       @item = FactoryBot.build(:item)
+      @user.save
       @item.save
-      @order_purchaser.user_id = @item.user.id
+      @order_purchaser.user_id = @user.id
       @order_purchaser.item_id = @item.id
       sleep(1)
     end
