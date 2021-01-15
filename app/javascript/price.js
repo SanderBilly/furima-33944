@@ -9,4 +9,4 @@ function calc(){
   });
 }
 
-setInterval(calc, 1000);
+window.addEventListener("load", calc);
