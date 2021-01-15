@@ -46,6 +46,11 @@ RSpec.describe OrderPurchaser, type: :model do
         @order_purchaser.valid?
         expect(@order_purchaser.errors.full_messages).to include "Postal code is invalid. Include hyphen(-)"
       end
+      it 'prefecture_idが空だと商品を購入できない' do
+        @order_purchaser.prefecture_id = nil
+        @order_purchaser.valid?
+        expect(@order_purchaser.errors.full_messages).to include "Prefecture can't be blank"
+      end
       it 'prefecture_idが0だと商品を購入できない' do
         @order_purchaser.prefecture_id = 0
         @order_purchaser.valid?
