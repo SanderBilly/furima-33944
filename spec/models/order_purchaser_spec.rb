@@ -21,6 +21,16 @@ RSpec.describe OrderPurchaser, type: :model do
     end
 
     context '商品を購入できない場合'do
+      it 'user_idが存在しない場合、商品を購入できない' do
+        @order_purchaser.user_id = nil
+        @order_purchaser.valid?
+        expect(@order_purchaser.errors.full_messages).to include "User can't be blank"
+      end
+      it 'item_idが存在しない場合、商品を購入できない' do
+        @order_purchaser.item_id = nil
+        @order_purchaser.valid?
+        expect(@order_purchaser.errors.full_messages).to include "Item can't be blank"
+      end
       it 'tokenが空だと商品を購入できない' do
         @order_purchaser.token = nil
         @order_purchaser.valid?
