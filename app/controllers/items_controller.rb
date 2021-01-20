@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, except: [:index, :new, :create]
+  before_action :set_category, only: [:index, :show]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -49,6 +50,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_category
+    @categories = Category.where.not(id: 0);
   end
 
   def move_to_index
