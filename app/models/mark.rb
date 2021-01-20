@@ -1,2 +1,3 @@
 class Mark < ApplicationRecord
+  
 end
