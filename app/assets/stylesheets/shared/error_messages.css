@@ -9,3 +9,10 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+
+@media(max-width:767px) {
+  .error-alert {
+    margin-bottom: 2vh;
+    padding-top: 3vh;
+  }
+}

@@ -310,3 +310,164 @@ a {
 }
 
 /* //商品一覧 */
+
+/* スマホ用レスポンシブcss */
+@media(max-width:767px) {
+  .title-contents {
+    align-items: center;
+    padding: 2vh 5vw;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  }
+
+  .service-title {
+    font-size: 3vh;
+  }
+
+  .service-explain {
+    font-size: 1.5vh;
+    line-height: 20px;
+  }
+
+  .store-btn {
+    margin-top: 10px;
+  }
+
+  .apple-btn {
+    margin-right: 5vw;
+    height: 5vh;
+  }
+  
+  .google-btn {
+    height: 5vh;
+  }
+
+  .select-reason-contents {
+    padding: 3vh 7vw 0;
+  }
+
+  .select-reason-contents>.title {
+    font-size: 2.5vh;
+    margin-bottom: 4vh;
+  }
+
+  .select-reason-contents>.title::after {
+    width: 30px;
+    height: 2px;
+    bottom: -5px;
+  }
+
+  .reason-lists {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reason-lists>.list {
+    width: 30vh;
+  }
+  
+  .list-pict {
+    margin-bottom: 10px;
+  }
+  
+  .reason-list-number {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .reason-list-text {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .reason-list-blue-text {
+    color: #3ccace;
+  }
+  
+  .reason-list-description {
+    font-size: 14px;
+    margin: 5px 0 20px;
+  }
+
+  .ad-contents {
+    padding: 2vh 5vw;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  }
+  
+  .ad-title {
+    font-size: 3vh;
+    margin-bottom: 0;
+  }
+  
+  .ad-explain {
+    font-size: 1.5vh;
+    line-height: 20px;
+  }
+
+  .feature-contents {
+    padding: 3vh 7vw;
+  }
+  
+  .feature-contents>.title {
+    font-size: 2.5vh;
+    margin-bottom: 4vh;
+  }
+  
+  .feature-contents>.title::after {
+    width: 30px;
+    height: 2px;
+    bottom: -5px;
+  }
+  
+  .feature-lists {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-lists>.list {
+    width: 30vh;
+  }
+  
+  .feature-list-text {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .feature-list-description {
+    font-size: 14px;
+    margin: 10px 0 25px;
+  }
+
+  .item-contents {
+    padding: 5vh 0;
+  }
+  
+  .item-contents>.title {
+    font-size: 3vh;
+  }
+  
+  .item-contents>.subtitle {
+    font-size: 2.5vh;
+  }
+  
+  .item-lists {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sold-out>span {
+    font-size: 27px;
+  }
+  
+  .item-name {
+    font-size: 2.5vh;
+  }
+  
+  .item-price {
+    font-size: 1.8vh;
+  }
+}

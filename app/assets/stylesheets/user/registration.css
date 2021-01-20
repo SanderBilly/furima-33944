@@ -158,3 +158,81 @@
   text-align: right;
   cursor: pointer;
 }
+
+/* スマホ用レスポンシブcss */
+@media(max-width:767px) {
+  .registration-main {
+    min-width: auto;
+  }
+
+  .form-wrap {
+    width: 90%;
+    padding-bottom: 30px;
+  }
+
+  .form-header {
+    height: 70px;
+    font-size: 20px;
+  }
+
+  .form-header-text {
+    line-height: 69px;
+  }
+
+  .form-group {
+    width: 90%;
+  }
+
+  .input-default {
+    height: 42px;
+    padding: 8px 14px 8px;
+    font-size: 15px;
+  }
+
+  .info-text {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .form-info-text {
+    font-size: 13px;
+  }
+
+  .input-name-wrap {
+    justify-content: left;
+  }
+
+  .input-name {
+    width: 130px;
+    margin: 5px 10px 0 0;
+    height: 42px;
+    line-height: 24px;
+    padding: 8px 14px 8px;
+  }
+
+  .input-birth-wrap {
+    justify-content: space-between;
+  }
+
+  .input-birth-wrap select {
+    width: 70px;
+    height: 42px;
+  }
+
+  .input-birth-wrap p {
+    line-height: 50px;
+  }
+
+  .form-bottom-text {
+    font-size: 14px;
+  }
+
+  .form-bottom-text:last-child {
+    padding-bottom: 20px;
+  }
+
+  .register-info {
+    margin: 25px auto 0;
+    text-align: center;
+  }
+}

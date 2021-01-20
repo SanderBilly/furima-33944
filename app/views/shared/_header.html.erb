@@ -24,4 +24,36 @@
       <% end %>
     </ul>
   </div>
+  <div class="menu-trigger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="sp-nav">
+    <form class="sp-search-form" action="#">
+      <input class='sp-input-box' placeholder='キーワードから探す'>
+      <button class="sp-search-button">
+        <span class="fas fa-search sp-search-icon"></span>
+      </button>
+    </form>
+    <div class="sp-nav-item">カテゴリ<span class="fas fa-caret-right sp-arrow"></span></div>
+    <ul class="sp-nav-parent">
+      <% @categories.each do |category| %>
+        <li class="sp-nav-child"><%= link_to category.name, "#" %></li>
+      <% end %>
+    </ul>
+    <div class="sp-nav-item">ブランド<span class="fas fa-caret-right sp-arrow"></span></div>
+    <ul class="sp-nav-parent">
+      <li class="sp-nav-child"><a href="#">brand</a></li>
+      <li class="sp-nav-child"><a href="#">その他</a></li>
+    </ul>
+    <% if user_signed_in? %>
+      <div class="sp-nav-item sp-link"><%= link_to "ユーザーページ", "#" %></div>
+      <div class="sp-nav-item sp-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></div>
+    <% else %>
+      <div class="sp-nav-item sp-link"><%= link_to 'ログイン', new_user_session_path %></div>
+      <div class="sp-nav-item sp-link"><%= link_to '新規登録', new_user_registration_path %></div>
+    <% end %>
+  </div>
+  <div class="overlay"></div>
 </header>
