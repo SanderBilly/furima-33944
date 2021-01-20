@@ -66,3 +66,55 @@
 .footer>p {
   font-size: 14px;
 }
+
+/* スマホ用レスポンシブcss */
+@media(max-width:767px) {
+  .ad-footer-contents {
+    padding: 2vh 5vw;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  }
+
+  .ad-footer-title {
+    font-size: 3vh;
+    margin-bottom: 1vh;
+  }
+
+  .ad-footer-explain {
+    font-size: 1.5vh;
+    line-height: 20px;
+  }
+
+  .footer {
+    padding: 2vh 0 8vh;
+    text-align: left;
+  }
+
+  .footer-contents {
+    justify-content: space-around;
+  }
+  
+  .furima-details {
+    margin: 0 2vw;
+  }
+  
+  .footer-content-head {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .footer-link {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  
+  .logo-white {
+    width: 20vh;
+    display: block;
+    margin-left: 20px;
+  }
+  
+  .footer>p {
+    font-size: 12px;
+    margin: 10px 0 0 20px;
+  }
+}
