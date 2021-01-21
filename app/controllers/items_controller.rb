@@ -24,6 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit
@@ -50,10 +52,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def set_category
-    @categories = Category.where.not(id: 0);
   end
 
   def move_to_index

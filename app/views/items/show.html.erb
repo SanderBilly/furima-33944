@@ -64,6 +64,7 @@
         </tr>
       </tbody>
     </table>
+    
     <% if @item.order == nil && user_signed_in? %>
       <div class="option">
         <div class="mark-btn">
@@ -87,20 +88,39 @@
   </div>
   <%# /商品の概要 %>
 
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
+  <% if @item.order == nil && user_signed_in? %>
+    <div class="comment-box">
+      <%= form_with url: item_comments_path(@item), model: [@item, @comment], local: true do |f|%>
+        <%= f.text_area :text, class: "comment-text" %>
+        <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
+        </p>
+        <%= f.submit "コメントする", class: "comment-btn"  %>
+      <% end %> 
+      <ul class="comments-lists">
+        <% @comments.each do |comment| %>
+          <li class="comments-list">
+            <% if comment.user == @item.user %>
+              <p class="comment-content master-comment"><%= "・#{comment.text} - 出品者" %></p>
+            <% else %>
+              <p class="comment-content"><%= "・#{comment.text} - #{comment.user.nickname}" %></p>
+            <% end %>
+            <p class="comment-time"><%= l comment.created_at %></p>
+          </li>
+        <% end %>
+      </ul>
+      <% if @comments.length >= 4 %>
+        <div class="comments-more">
+          <button class="comments-more-btn">コメントを全て表示する<%= "（#{@comments.length}）" %></button>
+        </div>
+      <% elsif @comments.length == 0 %>
+        <p class="no-comment">コメントはありません</p>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
