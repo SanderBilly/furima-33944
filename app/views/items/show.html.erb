@@ -64,16 +64,24 @@
         </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+      <div class="option">
+        <div class="mark-btn">
+          <% if Mark.find_by(user_id: current_user.id, item_id: @item.id) %>
+            <%= link_to item_mark_path(@item), class: "mark-btn-box", method: :delete do %>
+              <p class="mark"><span class="far fa-eye mark-btn-icon"></span>マーク済み</p>
+            <% end %>
+          <% else %>
+            <%= link_to item_marks_path(@item), class: "mark-btn-box", method: :post do %>
+              <p class="unmark"><span class="far fa-eye mark-btn-icon"></span>マークする</p>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="report-btn">
+          <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+          <span>不適切な商品の通報</span>
+        </div>
       </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
+
   </div>
   <%# /商品の概要 %>
 
