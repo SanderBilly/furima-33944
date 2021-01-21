@@ -146,6 +146,7 @@
               </h3>
               <div class='item-price'>
                 <span><%= item.price %>円<br><%= item.shipping_charge[:name] %></span>
+                <% if item.order == nil && user_signed_in? %>
                   <div class='index-mark'>
                     <% if Mark.find_by(user_id: current_user.id, item_id: item.id) %>
                       <span class="far fa-eye mark-icon mark"></span>
@@ -154,6 +155,8 @@
                     <% end %>
                     <span class='mark-count'><%= Mark.where(item_id: item.id).count %></span>
                   </div>
+                <% end %>
+
               </div>
             </div>
             <% end %>
