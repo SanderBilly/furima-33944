@@ -12,7 +12,7 @@
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
-  padding: 10vh 15vw;
+  padding: 10vh 15vw 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,7 @@
 
 .item-explain-box {
   font-size: 18px;
-  margin: 40px 0px;
+  margin: 20px 0px 40px;
 }
 
 .detail-table {
@@ -103,27 +103,42 @@
   position: relative;
 }
 
-.favorite-btn {
+.mark-btn {
   border-radius: 40px;
   width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
+  height: 6vh;
+  min-width: 130px;
   border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-right: 20px;
 }
 
-.favorite-star-icon {
+.mark-btn-box {
+  display: flex;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mark {
+  color: rgb(249, 75, 0);
+}
+
+.unmark {
+  color: #000;
+}
+
+.mark-btn-icon {
+  font-size: 20px;
   margin-right: 5px;
 }
 
 .report-btn {
   border-radius: 40px;
   width: 15vw;
+  height: 6vh;
   min-width: 200px;
-
   padding: 1vh 0;
   color: black;
   border: 2px solid #2d2d2d;
@@ -209,7 +224,7 @@
   .item-box {
     width: 100%;
     min-width: auto;
-    padding: 2vh 5vw 5vh;
+    padding: 2vh 5vw 3vh;
   }
   
   .item-box>.name {
@@ -250,7 +265,7 @@
   
   .item-explain-box {
     font-size: 16px;
-    margin: 20px 0px;
+    margin: 10px 0px 20px;
   }
   
   .detail-table {
@@ -270,13 +285,13 @@
   .option {
     font-size: 13px;
   }
-  
-  .favorite-btn {
+
+  .mark-btn {
     min-width: 120px;
     margin-right: 10px;
   }
   
-  .favorite-star-icon {
+  .mark-btn-icon {
     margin-right: 3px;
   }
   
