@@ -146,10 +146,17 @@
               </h3>
               <div class='item-price'>
                 <span><%= item.price %>円<br><%= item.shipping_charge[:name] %></span>
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
+                <% if item.order == nil && user_signed_in? %>
+                  <div class='index-mark'>
+                    <% if Mark.find_by(user_id: current_user.id, item_id: item.id) %>
+                      <span class="far fa-eye mark-icon mark"></span>
+                    <% else %>
+                      <span class="far fa-eye mark-icon unmark"></span>
+                    <% end %>
+                    <span class='mark-count'><%= Mark.where(item_id: item.id).count %></span>
+                  </div>
+                <% end %>
+
               </div>
             </div>
             <% end %>
