@@ -99,6 +99,25 @@
         </p>
         <%= f.submit "コメントする", class: "comment-btn"  %>
       <% end %> 
+      <ul class="comments-lists">
+        <% @comments.each do |comment| %>
+          <li class="comments-list">
+            <% if comment.user == @item.user %>
+              <p class="comment-content master-comment"><%= "・#{comment.text} - 出品者" %></p>
+            <% else %>
+              <p class="comment-content"><%= "・#{comment.text} - #{comment.user.nickname}" %></p>
+            <% end %>
+            <p class="comment-time"><%= l comment.created_at %></p>
+          </li>
+        <% end %>
+      </ul>
+      <% if @comments.length >= 4 %>
+        <div class="comments-more">
+          <button class="comments-more-btn">コメントを全て表示する<%= "（#{@comments.length}）" %></button>
+        </div>
+      <% elsif @comments.length == 0 %>
+        <p class="no-comment">コメントはありません</p>
+      <% end %>
     </div>
   <% end %>
 
