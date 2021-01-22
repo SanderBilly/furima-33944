@@ -92,6 +92,7 @@
     <div class="comment-box">
       <%= form_with url: item_comments_path(@item), model: [@item, @comment], local: true do |f|%>
         <%= f.text_area :text, class: "comment-text" %>
+        <%= render 'shared/error_messages', model: @comment %>
         <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
