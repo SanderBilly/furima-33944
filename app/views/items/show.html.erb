@@ -25,9 +25,9 @@
 
     <% if @item.order == nil && user_signed_in? %>
       <% if current_user.id == @item.user.id %>
-        <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
+        <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
-        <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
+        <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
       <% else %>
           <%= link_to '購入画面に進む', item_orders_path(@item), class:"item-red-btn"%>
       <% end %>
@@ -69,11 +69,11 @@
       <div class="option">
         <div class="mark-btn">
           <% if Mark.find_by(user_id: current_user.id, item_id: @item.id) %>
-            <%= link_to item_mark_path(@item), class: "mark-btn-box", method: :delete do %>
+            <%= link_to item_mark_path(@item, current_user.id), class: "mark-btn-box", method: :delete do %>
               <p class="mark"><span class="far fa-eye mark-btn-icon"></span>マーク済み</p>
             <% end %>
           <% else %>
-            <%= link_to item_marks_path(@item), class: "mark-btn-box", method: :post do %>
+            <%= link_to item_marks_path(@item, current_user.id), class: "mark-btn-box", method: :post do %>
               <p class="unmark"><span class="far fa-eye mark-btn-icon"></span>マークする</p>
             <% end %>
           <% end %>
