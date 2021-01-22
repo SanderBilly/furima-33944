@@ -5,7 +5,7 @@ class Item < ApplicationRecord
     validates :description
   end
 
-  with_options numericality: { other_than: 0, message: "can't be blank" } do
+  with_options numericality: { other_than: 0, message: "を選択してください" } do
     validates :category_id
     validates :condition_id
     validates :shipping_charge_id
@@ -14,8 +14,8 @@ class Item < ApplicationRecord
   end
 
   validates :price, presence: true
-  validates :price, numericality: { only_integer: true, message: "is invalid. Input half-width numbers." }
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
+  validates :price, numericality: { only_integer: true }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   has_one_attached :image
   
