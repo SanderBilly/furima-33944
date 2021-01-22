@@ -29,3 +29,12 @@ ja:
         price: 販売価格
       comment:
         text: コメント
+  activemodel:
+    attributes:
+      order_purchaser:
+        token: クレジットカード情報
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        house_number: 番地
+        phone_number: 電話番号

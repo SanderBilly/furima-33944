@@ -6,11 +6,11 @@ class OrderPurchaser
     validates :user_id
     validates :item_id
     validates :token
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
-    validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :city, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "is invalid. Input full-width characters." }
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "はハイフン(-)を含めて入力してください" }
+    validates :prefecture_id, numericality: { other_than: 0, message: "を選択してください" }
+    validates :city, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/ }
     validates :house_number
-    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/, message: "is invalid. Include within 10 to 11 half-width numbers." }
+    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/, message: "は10桁か11桁の半角数字のみを入力してください" }
   end
 
   def save
