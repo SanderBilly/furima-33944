@@ -4,13 +4,13 @@ function category(){
   const categoryList = document.querySelector(".category-parent");
 
   categoryAll.addEventListener("mouseover", () => {
-      categoryTrigger.classList.add("open");
-      categoryList.classList.add("open");
+    categoryTrigger.classList.add("open");
+    categoryList.classList.add("open");
   });
 
   categoryAll.addEventListener("mouseleave", () => {
-      categoryTrigger.classList.remove("open");
-      categoryList.classList.remove("open");
+    categoryTrigger.classList.remove("open");
+    categoryList.classList.remove("open");
   });
 }
 
