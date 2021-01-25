@@ -1,0 +1,51 @@
+<ul class='item-lists'>
+  <% if items %>
+    <% items.each do |item| %>
+      <li class='list'>
+        <%= link_to item_path(item) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" %>
+          <% if item.order != nil %>
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+          <% end %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= item.price %>円<br><%= item.shipping_charge[:name] %></span>
+            <% if item.order == nil && user_signed_in? %>
+              <div class='index-mark'>
+                <% if Mark.find_by(user_id: current_user.id, item_id: item.id) %>
+                  <span class="far fa-eye mark-icon mark"></span>
+                <% else %>
+                  <span class="far fa-eye mark-icon unmark"></span>
+                <% end %>
+                <span class='mark-count'><%= Mark.where(item_id: item.id).count %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>  
+  <% else %>
+    <li class='list'>
+      <%= link_to '#' do %>
+      <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          商品がありません
+        </h3>
+        <div class='item-price'>
+          <span>-円<br>(税込み)</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
