@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_item, except: [:index, :new, :create, :search]
-  before_action :set_category, only: [:index, :show, :search]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:index, :show, :search, :category]
   before_action :move_to_index, only: [:edit, :update, :destroy]
-  before_action :search_item, only: [:index, :show, :search]
+  before_action :search_item, only: [:index, :show, :search, :category]
 
   def index
     if Item.exists?
@@ -47,9 +47,12 @@ class ItemsController < ApplicationController
 
   def search
     @search_content = params[:q][:name_or_description_cont]
-    if @search.result.length != 0
-      @items = @search.result.includes(:user).order("created_at DESC")
-    end
+    @items = @search.result.includes(:user).order("created_at DESC")
+  end
+
+  def category
+    @category = Category.find(params[:category_id])
+    @items = Item.where(category_id: params[:category_id])
   end
 
   private
