@@ -11,8 +11,15 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li class="lists-item category">
+        <p class="category-list">カテゴリーから探す</p>
+        <ul class="category-parent">
+          <% @categories.each do |category| %>
+            <li class="category-child"><%= link_to category.name, "/items/category/#{category.id}" %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li class="lists-item"><%= link_to 'ブランドから探す', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
@@ -39,7 +46,7 @@
     <div class="sp-nav-item">カテゴリ<span class="fas fa-caret-right sp-arrow"></span></div>
     <ul class="sp-nav-parent">
       <% @categories.each do |category| %>
-        <li class="sp-nav-child"><%= link_to category.name, "#" %></li>
+        <li class="sp-nav-child"><%= link_to category.name, "/items/category/#{category.id}" %></li>
       <% end %>
     </ul>
     <div class="sp-nav-item">ブランド<span class="fas fa-caret-right sp-arrow"></span></div>
