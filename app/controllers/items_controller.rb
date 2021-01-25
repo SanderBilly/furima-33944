@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @search_content = params[:q][:name_cont]
+    @search_content = params[:q][:name_or_description_cont]
     if @search.result.length != 0
       @items = @search.result.includes(:user).order("created_at DESC")
     end
