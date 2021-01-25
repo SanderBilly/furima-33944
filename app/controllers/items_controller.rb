@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, except: [:index, :new, :create]
-  before_action :set_category, only: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :set_item, except: [:index, :new, :create, :search]
+  before_action :set_category, only: [:index, :show, :search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :search_item, only: [:index, :show, :search]
 
   def index
     if Item.exists?
@@ -44,6 +45,13 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @search_content = params[:q][:name_or_description_cont]
+    if @search.result.length != 0
+      @items = @search.result.includes(:user).order("created_at DESC")
+    end
+  end
+
   private
   
   def item_params
@@ -58,5 +66,9 @@ class ItemsController < ApplicationController
     if current_user.id != @item.user.id || @item.order != nil
       redirect_to root_path
     end
+  end
+
+  def search_item
+    @search = Item.ransack(params[:q])
   end
 end
