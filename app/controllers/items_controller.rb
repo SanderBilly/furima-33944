@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 
   def category
     @category = Category.find(params[:category_id])
-    @items = Item.where(category_id: params[:category_id])
+    @items = Item.where(category_id: params[:category_id]).order("created_at DESC")
   end
 
   private
