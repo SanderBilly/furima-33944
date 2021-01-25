@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+<div class="overlay"></div>
+<div class='main'>
+  <div class='item-contents'>
+    <h2 class='title'>商品一覧</h2>
+    <%= link_to @category.name, "#", class: "subtitle" %>
+    <%= render partial: "item", locals: { items: @items } %>
+  </div>
+</div>
+<%= render "new" %>
+<%= render "shared/footer" %>
