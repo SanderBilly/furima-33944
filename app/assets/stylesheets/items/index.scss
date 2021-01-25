@@ -220,18 +220,31 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 5vh 0 10vh;
 }
 
 .item-contents>.title {
-  font-size: 5vh;
+  font-size: 3.5vh;
+  margin-bottom: 2vh;
   line-height: 1.4;
   font-weight: bold;
+  position: relative;
+}
+
+.item-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #3ccace;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .item-contents>.subtitle {
   font-size: 3vh;
-  margin: 1vh 0;
+  margin: 1.5vh 0;
   text-decoration: none;
   color: #3ccace;
   font-weight: bold;
@@ -441,11 +454,17 @@ a {
   }
 
   .item-contents {
-    padding: 5vh 0;
+    padding: 3vh 0;
   }
   
   .item-contents>.title {
     font-size: 3vh;
+  }
+
+  .item-contents>.title::after {
+    width: 30px;
+    height: 2px;
+    bottom: -5px;
   }
   
   .item-contents>.subtitle {
