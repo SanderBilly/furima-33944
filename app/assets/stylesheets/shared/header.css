@@ -20,11 +20,11 @@
 
 .furima-icon {
   width: 13vw;
-  margin-right: 10vw;
+  /* margin-right: 10vw; */
 }
 
 .search-form {
-  width: 65vw;
+  width: 45vw;
   height: 5vh;
   display: flex;
   margin-bottom: 5px;
