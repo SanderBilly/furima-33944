@@ -31,7 +31,7 @@
   </div>
   <div class="sp-nav">
     <%= search_form_for @search, url: search_items_path, class: "sp-search-form" do |f| %>
-      <%= f.search_field :name_cont, class: "sp-input-box", placeholder: "キーワードから探す" %>
+      <%= f.search_field :name_or_description_cont, class: "sp-input-box", placeholder: "キーワードから探す" %>
       <%= f.button type: "sumbit", class: "sp-search-button" do %>
         <span class="fas fa-search sp-search-icon"></span>
       <% end %>
