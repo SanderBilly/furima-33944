@@ -4,12 +4,11 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 2vh 15vw 0;
   display: flex;
   flex-direction: column;
   position: fixed;
   background-color: #fff;
-  overflow-x: hidden;
   z-index: 10;
 }
 
@@ -56,24 +55,75 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  margin-top: 0.5vh;
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
+}
 
+.lists-item {
+  position: relative;
+}
+
+.category {
+  margin-right: 2vw;
 }
 
 .category-list {
-  text-decoration: none;
-  margin-right: 3vw;
   color: #333333;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.category-list:hover {
+  background-color: #3ccace;
+  color: white;
+}
+
+.category-list.open {
+  background-color: #3ccace;
+  color: white;
+}
+
+.category-parent {
+  position: absolute;
+  background-color: #3ccace;
+  width: 205px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.category-parent.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.category-child {
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.category-child:hover {
+  background-color: #6ab;
+}
+
+.category-child a {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
 }
 
 .brand-list {
   text-decoration: none;
   color: #333333;
+  display: inline-block;
+  padding: 5px;
 }
 
 .lists-right {
@@ -82,30 +132,36 @@
   align-items: flex-end;
 }
 
-
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
+  margin-right: 2vw;
   color: #333333;
   font-weight: bold;
+  display: inline-block;
+  padding: 5px;
 }
-
 
 .logout {
   text-decoration: none;
   color: #333333;
+  display: inline-block;
+  padding: 5px;
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
-  margin-right: 3vw;
+  margin-right: 2vw;
   color: #333333;
+  display: inline-block;
+  padding: 5px;
 }
 
 .sign-up {
   text-decoration: none;
   color: #333333;
+  display: inline-block;
+  padding: 5px;
 }
 
 .menu-trigger {
@@ -124,6 +180,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow-x: hidden;
   }
 
   .furima-icon {
