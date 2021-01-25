@@ -2,7 +2,8 @@
 <div class="overlay"></div>
 <div class='main'>
   <div class='item-contents'>
-    <h2 class='title'><%= "#{@search_content}の検索結果" %></h2>
+    <h2 class='title'>商品一覧</h2>
+    <p class="subtitle"><%= @category.name %></p>
     <%= render partial: "item", locals: { items: @items } %>
   </div>
 </div>
