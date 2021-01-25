@@ -126,7 +126,9 @@
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <%= render partial: "item", locals: { items: @items } %>
   </div>
   <%# /商品一覧 %>
 </div>
+<%= render "new" %>
 <%= render "shared/footer" %>
