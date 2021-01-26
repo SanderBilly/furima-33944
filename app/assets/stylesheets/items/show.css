@@ -97,6 +97,14 @@
   font-size: 14px;
 }
 
+.detail-value a {
+  color: #ea352d;
+}
+
+.detail-value a:hover {
+  color: rgb(146, 22, 22);
+}
+
 .option {
   display: flex;
   justify-content: space-between;
