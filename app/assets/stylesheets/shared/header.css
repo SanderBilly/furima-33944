@@ -10,6 +10,7 @@
   position: fixed;
   background-color: #fff;
   z-index: 10;
+  border-bottom: 3px solid rgba(100, 100, 100, 0.1);
 }
 
 .search-bar-contents {
@@ -20,7 +21,6 @@
 
 .furima-icon {
   width: 13vw;
-  /* margin-right: 10vw; */
 }
 
 .search-form {
@@ -74,7 +74,6 @@
 .category-list {
   color: #333333;
   padding: 5px;
-  transition: 0.3s;
 }
 
 .category-list:hover {
@@ -93,7 +92,6 @@
   width: 205px;
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
 }
 
 .category-parent.open {
@@ -103,7 +101,6 @@
 
 .category-child {
   font-size: 16px;
-  transition: 0.3s;
 }
 
 .category-child:hover {

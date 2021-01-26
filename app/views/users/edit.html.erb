@@ -1,0 +1,47 @@
+<%# cssは新規登録のものを併用しています。
+app/assets/stylesheets/user/registration.css %>
+
+<%= render "shared/second-header"%>
+
+<%= form_with model: @user, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      ユーザー情報編集
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">プロフィール画像</label>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :avater, id:"image-field" %>
+    </div>
+    <div id="image-preview"></div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">自己紹介</label>
+    </div>
+    <%= f.text_area :introduce, class:"input-default introduce-text", id:"introduce", placeholder:"例）良い取引ができるように頑張ります", rows: "4" %>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "編集する" ,class:"register-red-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/second-footer"%>

@@ -11,4 +11,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    member do
+      get "d_confirm"
+    end
+  end
 end

@@ -1,0 +1,50 @@
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 5vh 5vw;
+}
+.user-image {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.user-name {
+  font-weight: bold;
+  font-size: 4vh;
+  margin-top: 1vh;
+}
+.user-editor {
+  margin-top: 1vh;
+}
+.user-edit-btn {
+  text-decoration: underline;
+  color: #666;
+  font-size: 15px;
+}
+.user-destroy-btn {
+  text-decoration: underline;
+  color: #666;
+  font-size: 12px;
+  margin-left: 3vw;
+}
+.user-data {
+  margin-top: 3vh;
+  font-size: 14px;
+}
+.user-sales {
+  margin-left: 2vw;
+}
+.user-introduce {
+  margin-top: 3vh;
+  font-size: 16px;
+}
+
+/* スマホ用レスポンシブcss */
+@media(max-width:767px) {
+  .user-info-container {
+    width: 90%;
+  }
+}

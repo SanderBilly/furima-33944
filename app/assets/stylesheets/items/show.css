@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .item-box {
@@ -95,6 +96,14 @@
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
+}
+
+.detail-value a {
+  color: #ea352d;
+}
+
+.detail-value a:hover {
+  color: rgb(146, 22, 22);
 }
 
 .option {

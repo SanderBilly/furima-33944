@@ -12,6 +12,7 @@
 | first_name_kana    | string | null: false |
 | last_name_kana     | string | null: false |
 | birthday           | date   | null: false |
+| introduce          | text   |             |
 
 ### Association
 
@@ -45,7 +46,7 @@
 
 | Column | Type       | Options                        |
 | ----   | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
+| user   | references | foreign_key: true              |
 | item   | references | null: false, foreign_key: true |
 
 ### Association

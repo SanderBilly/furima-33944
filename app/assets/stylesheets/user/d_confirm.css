@@ -1,0 +1,25 @@
+.d-confirm {
+  text-align: center;
+  padding: 10vh 0;
+}
+.d-confirm-text {
+  font-size: 20px;
+  margin-bottom: 5vh;
+}
+.user-destroy-yes {
+  text-decoration: underline;
+  color: #666;
+  font-size: 18px;
+}
+.user-destroy-yes:hover {
+  color: #222;
+}
+.user-destroy-no {
+  text-decoration: underline;
+  color: #3ccace;
+  font-size: 18px;
+  margin-left: 2vw;
+}
+.user-destroy-no:hover {
+  color: #6ab;
+}
