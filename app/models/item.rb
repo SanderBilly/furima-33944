@@ -28,6 +28,6 @@ class Item < ApplicationRecord
   
   belongs_to :user
   has_one :order
-  has_many :marks
-  has_many :comments
+  has_many :marks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

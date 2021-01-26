@@ -20,8 +20,8 @@ class User < ApplicationRecord
 
   has_one_attached :avater
 
-  has_many :items
-  has_many :orders
-  has_many :marks
-  has_many :comments
+  has_many :items, dependent: :destroy
+  has_many :orders, dependent: :nullify
+  has_many :marks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
