@@ -18,6 +18,8 @@ class User < ApplicationRecord
     validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
   end
 
+  has_one_attached :avater
+
   has_many :items
   has_many :orders
   has_many :marks
