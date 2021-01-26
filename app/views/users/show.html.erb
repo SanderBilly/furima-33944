@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+<div class="overlay"></div>
+
+<div class='main'>
+
+  <div class="user-info-container">
+    <% if @user.avater.attached? %>
+      <%= image_tag @user.avater.variant(gravity: :center, resize: "200x200^", crop: "200x200+0+0"), class:"user-image" %>
+    <% else %>
+      <%= image_tag "NOIMAGE.png", class:"user-image" %>
+    <% end %>
+    <h2 class="user-name"><%= @user.nickname %></h2>
+    <% if current_user.id == @user.id %>
+    <div class="user-editor">
+      <%= link_to '編集', edit_user_path(@user), method: :get, class: "user-edit-btn" %>
+      <%= link_to 'ユーザーの削除', d_confirm_user_path(@user), class:'user-destroy-btn' %>
+    </div>
+    <% end %>
+    <div class="user-data">
+      <span class="user-display">出品した数：<%= @user.items.length %></span>
+      <span class="user-sales">取引した数：<%= Order.where(item_id: @user.items).length %></span>
+    </div>
+    <div class="user-introduce"><%= @user.introduce %></div>
+  </div>
+
+  <div class='item-contents'>
+    <h2 class='title'><%= @user.nickname %>さんの出品一覧</h2>
+    <%= render partial: "items/item", locals: { items: @items } %>
+  </div>
+</div>
+
+<%= render "items/new" %>
+<%= render "shared/footer" %>
