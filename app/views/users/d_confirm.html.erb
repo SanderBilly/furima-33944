@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+<div class="overlay"></div>
+
+<div class="main">
+<div class="d-confirm">
+  <p class="d-confirm-text">本当にユーザー（ユーザー名：<%= @user.nickname %>）を削除しますか？</p>
+  <%= link_to 'はい', user_path(@user), method: :delete, class:'user-destroy-yes' %>
+  <%= link_to 'いいえ(ユーザーページへ戻る)', user_path(@user), class: 'user-destroy-no' %>
+</div>
+</div>
+
+<%= render "items/new" %>
+<%= render "shared/footer" %>
