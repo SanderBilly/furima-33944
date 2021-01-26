@@ -13,7 +13,7 @@ if(document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       ImagePreview.appendChild(imageElement);
     };
 
-    document.getElementById('item-image').addEventListener('change', (e) => {
+    document.getElementById('image-field').addEventListener('change', (e) => {
       const imageContent = document.querySelector('.preview-image');
       if (imageContent){
         imageContent.remove();
