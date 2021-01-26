@@ -10,7 +10,7 @@
       <%= image_tag "NOIMAGE.png", class:"user-image" %>
     <% end %>
     <h2 class="user-name"><%= @user.nickname %></h2>
-    <% if current_user.id == @user.id %>
+    <% if user_signed_in? && current_user.id == @user.id %>
     <div class="user-editor">
       <%= link_to '編集', edit_user_path(@user), method: :get, class: "user-edit-btn" %>
       <%= link_to 'ユーザーの削除', d_confirm_user_path(@user), class:'user-destroy-btn' %>
