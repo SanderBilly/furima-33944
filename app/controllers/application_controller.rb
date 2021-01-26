@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def set_category
     @categories = Category.where.not(id: 0);
   end
+
+  def search_item
+    @search = Item.ransack(params[:q])
+  end
 end

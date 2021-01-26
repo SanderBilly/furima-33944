@@ -70,8 +70,4 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
-
-  def search_item
-    @search = Item.ransack(params[:q])
-  end
 end
