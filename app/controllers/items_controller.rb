@@ -6,9 +6,7 @@ class ItemsController < ApplicationController
   before_action :search_item, only: [:index, :show, :search, :category]
 
   def index
-    if Item.exists?
-      @items = Item.includes(:user).order("created_at DESC")
-    end
+    @items = Item.includes(:user).order("created_at DESC")
   end
 
   def new
