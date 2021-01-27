@@ -22,6 +22,10 @@
 .second-footer-logo {
   width: 185px;
   height: 49px;
+}
+
+.second-footer a {
+  display: inline-block;
   margin: 0 auto;
 }
 
