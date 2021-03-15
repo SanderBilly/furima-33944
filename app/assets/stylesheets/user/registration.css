@@ -164,7 +164,7 @@
 }
 
 /* スマホ用レスポンシブcss */
-@media(max-width:767px) {
+@media(max-width:599px) {
   .registration-main {
     min-width: auto;
   }

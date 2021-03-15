@@ -10,7 +10,7 @@
   color: rgb(182, 48, 0);
 }
 
-@media(max-width:767px) {
+@media(max-width:599px) {
   .error-alert {
     padding-top: 3vh;
   }

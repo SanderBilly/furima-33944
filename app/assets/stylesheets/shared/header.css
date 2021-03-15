@@ -171,7 +171,7 @@
 }
 
 /* スマホ用レスポンシブcss */
-@media(max-width:767px) {
+@media(max-width:599px) {
   .top-page-header {
     padding: 2vh 5vw;
     display: flex;

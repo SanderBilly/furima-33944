@@ -275,7 +275,7 @@
 }
 
 /* スマホ用レスポンシブ */
-@media(max-width:767px) {
+@media(max-width:599px) {
   .item-box {
     width: 100%;
     min-width: auto;

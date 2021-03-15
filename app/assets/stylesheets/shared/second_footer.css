@@ -29,7 +29,7 @@
   margin: 0 auto;
 }
 
-@media(max-width:767px) {
+@media(max-width:599px) {
   .second-footer {
     min-width: auto;
   }
