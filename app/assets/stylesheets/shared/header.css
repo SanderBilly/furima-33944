@@ -33,6 +33,7 @@
 .search-form>.input-box {
   width: 100%;
   height: 5vh;
+  border:  1px solid #aaa;
   padding: 0 10px;
 }
 
