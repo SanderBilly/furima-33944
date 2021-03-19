@@ -1,0 +1,9 @@
+<% if Mark.find_by(user_id: current_user.id, item_id: item.id) %>
+  <%= link_to item_mark_path(item, current_user.id), class: "mark-btn-box", method: :delete, remote: true do %>
+    <p class="mark"><span class="far fa-eye mark-btn-icon"></span>マーク済み</p>
+  <% end %>
+<% else %>
+  <%= link_to item_marks_path(item, current_user.id), class: "mark-btn-box", method: :post, remote: true do %>
+    <p class="unmark"><span class="far fa-eye mark-btn-icon"></span>マークする</p>
+  <% end %>
+<% end %>
